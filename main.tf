@@ -20,28 +20,28 @@ resource vsphere_virtual_machine "vm" {
 
   num_cpus = 2
   memory   = 1024
-  guest_id = "{data.vsphere_virtual_machine.template.guest_id}"
-  scsi_type = "{data.vsphere_virtual_machine.template.scsi_type}"
+  guest_id = "${data.vsphere_virtual_machine.template.guest_id}"
+  scsi_type = "${data.vsphere_virtual_machine.template.scsi_type}"
 
   cdrom {
     client_device = true
   }
 
   network_interface {
-    network_id   = "{data.vsphere_network.network.id}"
-    adapter_type = "{data.vsphere_virtual_machine.template.network_interface_types[0]}"
+    network_id   = "${data.vsphere_network.network.id}"
+    adapter_type = "${data.vsphere_virtual_machine.template.network_interface_types[0]}"
   }
   wait_for_guest_net_timeout = 0
 
   disk {
     label            = "disk0"
-    size             = "{data.vsphere_virtual_machine.template.disks.0.size}"
-    eagerly_scrub    = "{data.vsphere_virtual_machine.template.disks.0.eagerly_scrub}"
-    thin_provisioned = "{data.vsphere_virtual_machine.template.disks.0.thin_provisioned}"
+    size             = "${data.vsphere_virtual_machine.template.disks.0.size}"
+    eagerly_scrub    = "${data.vsphere_virtual_machine.template.disks.0.eagerly_scrub}"
+    thin_provisioned = "${data.vsphere_virtual_machine.template.disks.0.thin_provisioned}"
   }
 
   clone {
-    template_uuid = "{data.vsphere_virtual_machine.template.id}"
+    template_uuid = "${data.vsphere_virtual_machine.template.id}"
   }
 
   vapp {
