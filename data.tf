@@ -18,10 +18,10 @@ data vsphere_datastore "ds" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
-data vsphere_network "network" {
-  name          = "${var.spoke_name}"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
-}
+#data vsphere_network "network" {
+#  name          = "${var.spoke_name}"
+#  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+#}
 
 data vsphere_virtual_machine "template" {
   name          = "${var.vmware_template}"
