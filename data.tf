@@ -20,7 +20,7 @@ data vsphere_datastore "ds" {
 
 data vsphere_network "network" {
   name          = "${var.spoke_name}"
-  datacenter_id = "${data.vsphere_datacenter.this.id}"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data vsphere_virtual_machine "template" {
