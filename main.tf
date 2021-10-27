@@ -58,10 +58,10 @@ resource vsphere_virtual_machine "vm" {
     }
   }
 
-  # extra_config = {
-  #   "guestinfo.metadata"          = base64encode(file("${path.module}/cloudinit/metadata.yaml"))
-  #   "guestinfo.metadata.encoding" = "base64"
-  #   "guestinfo.userdata"          = base64encode(file("${path.module}/cloudinit/userdata.yaml"))
+  extra_config = {
+    "guestinfo.metadata"          = base64encode(file("${path.module}/cloudinit/metadata.yml"))
+    "guestinfo.metadata.encoding" = "base64"
+  #   "guestinfo.userdata"          = base64encode(file("${path.module}/cloudinit/userdata.yml"))
   #   "guestinfo.userdata.encoding" = "base64"
-  # }
+  }
 }
