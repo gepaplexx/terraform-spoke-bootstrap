@@ -12,6 +12,12 @@ resource "vsphere_folder" "folder" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
+resource "time_sleep" "wait_30_seconds" {
+  depends_on = [vsphere_host_port_group.pg]
+
+  create_duration = "30s"
+}
+
 resource vsphere_virtual_machine "vm" {
   name             = "test"
   resource_pool_id = "${data.vsphere_compute_cluster.cc.resource_pool_id}"

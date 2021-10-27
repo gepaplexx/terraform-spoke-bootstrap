@@ -21,7 +21,7 @@ data vsphere_datastore "ds" {
 data vsphere_network "network" {
   name          = "${var.spoke_name}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
-  depends_on    = [vsphere_host_port_group.pg]
+  depends_on     = [time_sleep.wait_30_seconds]
 }
 
 data vsphere_virtual_machine "template" {
