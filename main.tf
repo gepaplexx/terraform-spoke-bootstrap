@@ -17,6 +17,7 @@ resource vsphere_virtual_machine "vm" {
   resource_pool_id = "${data.vsphere_compute_cluster.cc.resource_pool_id}"
   datastore_id     = "${data.vsphere_datastore.ds.id}"
   folder           = "GP/${var.spoke_name}"
+  depends_on       = [vsphere_host_port_group.pg]
 
   num_cpus = 2
   memory   = 1024
