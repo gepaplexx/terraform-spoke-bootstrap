@@ -25,15 +25,15 @@ variable "vmware_esxi_hosts" {
 
 variable "spoke_name" {
   type = string
-  description = "Name."
+  description = "Name of the spoke network. preferably use the FQDN."
 }
 
 variable "spoke_vlan_id" {
   type = number
-  description = "Name."
+  description = "vlan id used for this spoke network."
 }
 
 variable "spoke_vswitch" {
   type = string
-  description = "Name."
+  description = "vSwitch we need to attach our spoke network to."
 }
