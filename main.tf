@@ -47,7 +47,7 @@ resource vsphere_virtual_machine "vm" {
   vapp {
     properties ={
       hostname = "test"
-      # user-data = base64encode(file("${path.module}/cloudinit/kickstart.yaml"))
+      user-data = base64encode(file("${path.module}/cloudinit/kickstart.yml"))
     }
   }
 
