@@ -6,4 +6,4 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     groups: sudo
     shell: /bin/bash
-    plain_text_passwd: ansible
+    passwd: $6$rounds=4096$Wp3AblCh7qDML3eB$Li18XxnVWcFCe6fdIQ6HhoM2BPILJSNBDPmd41Gu3D.tc/q5QP4O8svuWt.2rgZCzvVse0CVTx9kYrctAqSLO0
