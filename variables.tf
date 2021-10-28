@@ -41,10 +41,6 @@ variable "spoke_vswitch" {
 # vmware configuration #
 ########################
 
-#############################
-# VM resource configuration #
-#############################
-
 variable "vmware_host" {
   type = string
   description = "The vsphere host name or ip used for authentication."
@@ -84,6 +80,9 @@ variable "vmware_template" {
   description = "The vsphere vm template used to provision new vms."
 }
 
+#############################
+# VM resource configuration #
+#############################
 
 variable "service_vm_cpu" {
   type = number
@@ -94,43 +93,3 @@ variable "service_vm_memory_mb" {
   type = number
   description = "Specify the ram in MB for servicce vms."
 }
-
-# variable "lb_vm_cpu" {
-#   type = number
-#   description = "Specify the cpu for loadbalancer vms."
-# }
-
-# variable "lb_vm_memory_mb_mb" {
-#   type = number
-#   description = "Specify the ram in MB for loadbalancer vms."
-# }
-
-# variable "ocp_infra_cpu" {
-#   type = number
-#   description = "Specify the cpu for ocp infra nodes."
-# }
-
-# variable "ocp_infra_memory_mb" {
-#   type = number
-#   description = "Specify the ram in MB for ocp infra nodes."
-# }
-
-# variable "ocp_master_cpu" {
-#   type = number
-#   description = "Specify the cpu for ocp master nodes."
-# }
-
-# variable "ocp_master_memory_mb" {
-#   type = number
-#   description = "Specify the ram in MB for ocp master nodes."
-# }
-
-# variable "ocp_worker_cpu" {
-#   type = number
-#   description = "Specify the cpu for ocp worker nodes."
-# }
-
-# variable "ocp_worker_memory_mb" {
-#   type = number
-#   description = "Specify the ram in MB for ocp worker nodes."
-# }
