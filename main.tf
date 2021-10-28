@@ -54,14 +54,14 @@ resource vsphere_virtual_machine "vm" {
   vapp {
     properties ={
       hostname = "test"
-      user-data = base64encode(file("${path.module}/cloudinit/kickstart.yml"))
+      user-data = base64encode(file("${path.module}/cloudinit/kickstart.yaml"))
     }
   }
 
-  # extra_config = {
-  #   "guestinfo.metadata"          = base64encode(file("${path.module}/cloudinit/metadata.yml"))
-  #   "guestinfo.metadata.encoding" = "base64"
-  #   "guestinfo.userdata"          = base64encode(file("${path.module}/cloudinit/userdata.yml"))
-  #   "guestinfo.userdata.encoding" = "base64"
-  #}
+  extra_config = {
+    "guestinfo.metadata"          = base64encode(file("${path.module}/cloudinit/metadata.yaml"))
+    "guestinfo.metadata.encoding" = "base64"
+    "guestinfo.userdata"          = base64encode(file("${path.module}/cloudinit/userdata.yaml"))
+    "guestinfo.userdata.encoding" = "base64"
+  }
 }

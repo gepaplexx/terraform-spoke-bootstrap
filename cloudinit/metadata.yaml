@@ -1,3 +1,4 @@
+#cloud-config 
 # local-hostname: test
 # instance-id: test
 network:
