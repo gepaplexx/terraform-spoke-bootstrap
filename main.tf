@@ -63,5 +63,5 @@ resource vsphere_virtual_machine "vm" {
   #   "guestinfo.metadata.encoding" = "base64"
   #   "guestinfo.userdata"          = base64encode(file("${path.module}/cloudinit/userdata.yml"))
   #   "guestinfo.userdata.encoding" = "base64"
-  }
+  #}
 }
