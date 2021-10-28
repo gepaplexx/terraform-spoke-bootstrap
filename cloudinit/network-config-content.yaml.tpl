@@ -9,5 +9,5 @@ network:
       nameservers:
         addresses:
           - 8.8.8.8 # Set DNS ip address here
-        dns_search:
+        search:
           - mycompany.com
