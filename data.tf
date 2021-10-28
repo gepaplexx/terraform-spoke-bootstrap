@@ -19,7 +19,7 @@ data vsphere_datastore "ds" {
 }
 
 data vsphere_network "network" {
-  name          = "${var.spoke_name}"
+  name          = "${var.network_name}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
   depends_on     = [time_sleep.wait_30_seconds]
 }
