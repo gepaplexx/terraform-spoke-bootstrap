@@ -1,6 +1,6 @@
 variable "authorized_key" {
   type = string
-  description = "authorized key used to log in to all vms in the spoke network. authorized_key for user "core" on all ocp vms and authorized_key for user "ansible" on all other vms."
+  description = "authorized key used to log in to all vms in the spoke network. authorized_key for user 'core' on all ocp vms and authorized_key for user 'ansible' on all other vms."
 }
 
 ###############################
