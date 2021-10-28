@@ -19,7 +19,7 @@ resource "time_sleep" "wait_30_seconds" {
 }
 
 resource vsphere_virtual_machine "service0" {
-  name             = "service0"
+  name             = "service0.${var.spoke_network_name}"
   resource_pool_id = "${data.vsphere_compute_cluster.cc.resource_pool_id}"
   datastore_id     = "${data.vsphere_datastore.ds.id}"
   folder           = "GP/${var.spoke_network_name}"
