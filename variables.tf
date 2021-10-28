@@ -34,7 +34,7 @@ variable "vmware_datastore" {
 
 variable "vmware_template" {
   type = string
-  description = "The vsphere vm template used to provision new vms.
+  description = "The vsphere vm template used to provision new vms."
 }
 
 variable "network_name" {
