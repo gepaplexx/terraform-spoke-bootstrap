@@ -72,7 +72,7 @@ variable "service_vm_cpu" {
   description = "Specify the cpu for service vms."
 }
 
-variable "service_vm_ram_mb" {
+variable "service_vm_memory_mb" {
   type = number
   description = "Specify the ram in MB for servicce vms."
 }
@@ -82,7 +82,7 @@ variable "service_vm_ram_mb" {
 #   description = "Specify the cpu for loadbalancer vms."
 # }
 
-# variable "lb_vm_ram_mb_mb" {
+# variable "lb_vm_memory_mb_mb" {
 #   type = number
 #   description = "Specify the ram in MB for loadbalancer vms."
 # }
@@ -92,7 +92,7 @@ variable "service_vm_ram_mb" {
 #   description = "Specify the cpu for ocp infra nodes."
 # }
 
-# variable "ocp_infra_ram_mb" {
+# variable "ocp_infra_memory_mb" {
 #   type = number
 #   description = "Specify the ram in MB for ocp infra nodes."
 # }
@@ -102,7 +102,7 @@ variable "service_vm_ram_mb" {
 #   description = "Specify the cpu for ocp master nodes."
 # }
 
-# variable "ocp_master_ram_mb" {
+# variable "ocp_master_memory_mb" {
 #   type = number
 #   description = "Specify the ram in MB for ocp master nodes."
 # }
@@ -112,7 +112,7 @@ variable "service_vm_ram_mb" {
 #   description = "Specify the cpu for ocp worker nodes."
 # }
 
-# variable "ocp_worker_ram_mb" {
+# variable "ocp_worker_memory_mb" {
 #   type = number
 #   description = "Specify the ram in MB for ocp worker nodes."
 # }
