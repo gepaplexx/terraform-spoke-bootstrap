@@ -1,3 +1,50 @@
+variable "authorized_key" {
+  type = string
+  description = "authorized key used to log in to all vms in the spoke network. authorized_key for user "core" on all ocp vms and authorized_key for user "ansible" on all other vms."
+}
+
+###############################
+# Spoke network configuration #
+###############################
+
+variable "spoke_mac_prefix" {
+  type = string
+  description = "MAC address prefix used for each vm in the spoke network"
+}
+
+variable "spoke_network_name" {
+  type = string
+  description = "Name of the network. preferably use the FQDN of the ocp cluster."
+}
+
+variable "spoke_network" {
+  type = string
+  description = "Specify the network for this spoke network. E.g. for a class c network set the variable to 192.168.0"
+}
+
+variable "spoke_netmask" {
+  type = string
+  description = "Specify the netmask for for this spoke network. E.g. for a class c network set the variable 24"
+}
+
+variable "spoke_vlan_id" {
+  type = number
+  description = "Specify the vlan id associated to the network."
+}
+
+variable "spoke_vswitch" {
+  type = string
+  description = "Specify the vswitch the network should be attached to."
+}
+
+########################
+# vmware configuration #
+########################
+
+#############################
+# VM resource configuration #
+#############################
+
 variable "vmware_host" {
   type = string
   description = "The vsphere host name or ip used for authentication."
@@ -37,35 +84,6 @@ variable "vmware_template" {
   description = "The vsphere vm template used to provision new vms."
 }
 
-variable "network_name" {
-  type = string
-  description = "Name of the network. preferably use the FQDN."
-}
-
-variable "network" {
-  type = string
-  description = "Specify the network for this spoke network. E.g. for a class c network set the variable to 192.168.0"
-}
-
-variable "netmask" {
-  type = string
-  description = "Specify the netmask for for this spoke network. E.g. for a class c network set the variable 24"
-}
-
-variable "vlan_id" {
-  type = number
-  description = "Specify the vlan id associated to the network."
-}
-
-variable "vswitch" {
-  type = string
-  description = "Specify the vswitch the network should be attached to."
-}
-
-variable "authorized_key" {
-  type = string
-  description = "Set the authorized_key for the ansible user."
-}
 
 variable "service_vm_cpu" {
   type = number

@@ -2,13 +2,13 @@ network:
   version: 2
   ethernets:
     ens192:
-      dhcp4: false #true to use dhcp
+      dhcp4: false
       addresses:
-        -  ${ipv4}/${ipv4_subnet_mask} #Set you ip here
-      gateway4: ${ipv4_gateway} # Set gw here 
+        -  ${network}/${netmask}
+      gateway4: ${gateway}
       nameservers:
         addresses:
-          - ${ipv4_dns} # Set DNS ip address here
+          - ${dns}
           - 8.8.8.8
         # search:
         #   - mycompany.com
