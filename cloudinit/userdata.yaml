@@ -1,7 +1,0 @@
-#cloud-config 
-packages:
-  - nfs-kernel-server
-  - docker
-  - docker.io
-runcmd:
-    - mkdir -p /mnt/sharedfolder

@@ -54,27 +54,16 @@ resource vsphere_virtual_machine "vm" {
   vapp {
     properties ={
       hostname = "test"
-      user-data = base64encode(file("${path.module}/cloudinit/kickstart.yaml"))
+      # user-data = base64encode(file("${path.module}/cloudinit/kickstart.yaml"))
+      user-data = base64encode(templatefile("${path.module}/cloudinit/cloud-config.yaml.tpl", {
+        network_config = templatefile("${path.module}/cloudinit/network-config.yaml.tpl", {
+          network_config_content_base64 = base64encode(templatefile("${path.module}/cloudinit/network-config-content.yaml.tpl", {
+            ipv4_subnet_mask = "24"
+            ipv4             = "10.252.1.10"
+            ipv4_gateway     = "10.252.1.254"
+          }))
+        })
+      }))
     }
   }
-
-  # extra_config = {
-  #   "guestinfo.metadata" = base64encode(templatefile("${path.module}/cloudinit/metadata.json.tpl", {
-  #       name = "metadata"
-
-  #       network_config = base64encode(templatefile("${path.module}/cloudinit/network.tpl", {
-  #         ipv4_subnet_mask = "24"
-  #         ipv4             = "10.252.1.10"
-  #         ipv4_gateway     = "10.252.1.254"
-  #       }))
-  #     }))
-  #   "guestinfo.metadata.encoding" = "base64"
-  # }
-
-#  extra_config = {
-#    "guestinfo.metadata"          = base64encode(file("${path.module}/cloudinit/metadata.yaml"))
-#    "guestinfo.metadata.encoding" = "base64"
-#    "guestinfo.userdata"          = base64encode(file("${path.module}/cloudinit/userdata.yaml"))
-#    "guestinfo.userdata.encoding" = "base64"
-#  }
 }

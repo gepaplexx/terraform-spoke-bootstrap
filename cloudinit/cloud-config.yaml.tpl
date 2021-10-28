@@ -11,10 +11,4 @@ users:
     groups: sudo
     shell: /bin/bash
 
-write_files:
-  - encoding: base64
-    content: bmV0d29yazoKIHZlcnNpb246IDIKIGV0aGVybmV0czoKICAgZW5zMTkyOgogICAgYWRkcmVzc2VzOiBbMTkyLjE2OC4xMTEuMTExLzI0XQogICAgZ2F0ZXdheTQ6IDE5Mi4xNjguMTExLjEK
-    path: /etc/netplan/50-cloud-init.yaml
-
-runcmd:
-  - netplan apply
+${network_config}
