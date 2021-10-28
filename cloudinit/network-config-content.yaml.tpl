@@ -8,6 +8,7 @@ network:
       gateway4: ${ipv4_gateway} # Set gw here 
       nameservers:
         addresses:
-          - 8.8.8.8 # Set DNS ip address here
-        search:
-          - mycompany.com
+          - ${ipv4_dns} # Set DNS ip address here
+          - 8.8.8.8
+        # search:
+        #   - mycompany.com

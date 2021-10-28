@@ -56,3 +56,13 @@ variable "spoke_vswitch" {
   type = string
   description = "vSwitch we need to attach our spoke network to."
 }
+
+variable "spoke_network" {
+  type = string
+  description = "todo."
+}
+
+variable "spoke_netmask" {
+  type = string
+  description = "todo."
+}

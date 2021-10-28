@@ -54,13 +54,13 @@ resource vsphere_virtual_machine "vm" {
   vapp {
     properties ={
       hostname = "test"
-      # user-data = base64encode(file("${path.module}/cloudinit/kickstart.yaml"))
       user-data = base64encode(templatefile("${path.module}/cloudinit/cloud-config.yaml.tpl", {
         network_config = templatefile("${path.module}/cloudinit/network-config.yaml.tpl", {
           network_config_content_base64 = base64encode(templatefile("${path.module}/cloudinit/network-config-content.yaml.tpl", {
-            ipv4_subnet_mask = "24"
-            ipv4             = "10.252.1.10"
-            ipv4_gateway     = "10.252.1.254"
+            ipv4_subnet_mask = "${var.spoke_netmask}"
+            ipv4             = "${var.spoke_network}.1"
+            ipv4_gateway     = "${var.spoke_network}.254"
+            ipv4_dns         = "${var.spoke_network}.1"
           }))
         })
       }))

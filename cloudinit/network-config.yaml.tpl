@@ -5,5 +5,3 @@ write_files:
 
 runcmd:
   - netplan apply
-
-# bmV0d29yazoKIHZlcnNpb246IDIKIGV0aGVybmV0czoKICAgZW5zMTkyOgogICAgYWRkcmVzc2VzOiBbMTkyLjE2OC4xMTEuMTExLzI0XQogICAgZ2F0ZXdheTQ6IDE5Mi4xNjguMTExLjEK
