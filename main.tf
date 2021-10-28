@@ -55,7 +55,7 @@ resource vsphere_virtual_machine "service001" {
     properties ={
       hostname = "service001"
       user-data = base64encode(templatefile("${path.module}/cloudinit/cloud-config.yaml.tpl", {
-        authorized_key = "${var.spoke_authorized_key}"
+        authorized_key = "${var.authorized_key}"
         network_config = templatefile("${path.module}/cloudinit/network-config.yaml.tpl", {
           network_config_content_base64 = base64encode(templatefile("${path.module}/cloudinit/network-config-content.yaml.tpl", {
             ipv4_subnet_mask = "${var.netmask}"
