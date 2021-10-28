@@ -10,3 +10,14 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     groups: sudo
     shell: /bin/bash
+network:
+  version: 2
+  ethernets:
+    ens192:
+      dhcp4: false #true to use dhcp
+      addresses:
+        - 10.252.1.10/24 #Set you ip here
+      gateway4: 10.252.1.254 # Set gw here 
+      nameservers:
+        addresses:
+          - 10.20.26.3 # Set DNS ip address here
