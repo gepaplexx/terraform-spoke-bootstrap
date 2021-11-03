@@ -23,7 +23,7 @@ resource vsphere_virtual_machine "service0" {
   resource_pool_id = "${data.vsphere_compute_cluster.cc.resource_pool_id}"
   datastore_id     = "${data.vsphere_datastore.ds.id}"
   folder           = "GP/${var.spoke_network_name}"
-  depends_on       = [vsphere_host_port_group.pg,vsphere_folder.folder]
+  depends_on       = [time_sleep.wait_30_seconds]
 
   num_cpus  = "${var.service_vm_cpu}"
   memory    = "${var.service_vm_memory_mb}"
