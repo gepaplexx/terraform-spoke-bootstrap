@@ -13,7 +13,7 @@ resource "vsphere_folder" "folder" {
 }
 
 resource "time_sleep" "wait_30_seconds" {
-  depends_on = [vsphere_host_port_group.pg]
+  depends_on = [vsphere_host_port_group.pg,vsphere_folder.folder]
 
   create_duration = "30s"
 }
