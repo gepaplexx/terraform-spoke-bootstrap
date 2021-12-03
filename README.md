@@ -33,3 +33,4 @@ MIT
 ## Contributions
 
 - [@ckaserer](https://github.com/ckaserer)
+- [@fhochleitner](https://github.com/fhochleitner)
