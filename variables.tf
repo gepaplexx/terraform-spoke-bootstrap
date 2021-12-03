@@ -9,7 +9,7 @@ variable "authorized_key" {
 
 variable "spoke_mac_prefix" {
   type = string
-  description = "MAC address prefix used for each vm in the spoke network"
+  description = "MAC address prefix used for each vm in the spoke network."
 }
 
 variable "spoke_network_name" {
@@ -91,5 +91,5 @@ variable "service_vm_cpu" {
 
 variable "service_vm_memory_mb" {
   type = number
-  description = "Specify the ram in MB for servicce vms."
+  description = "Specify the ram in MB for service vms."
 }
