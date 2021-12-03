@@ -30,10 +30,6 @@ resource vsphere_virtual_machine "service0" {
   guest_id  = "${data.vsphere_virtual_machine.template.guest_id}"
   scsi_type = "${data.vsphere_virtual_machine.template.scsi_type}"
 
-  cdrom {
-    client_device = true
-  }
-
   network_interface {
     network_id   = "${data.vsphere_network.network.id}"
     adapter_type = "${data.vsphere_virtual_machine.template.network_interface_types[0]}"
